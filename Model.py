@@ -267,7 +267,7 @@ class EmbeddingGenerator:    # 保存embedding文件 并建立索引文件 和�
             print(f"An error occurred while generating embeddings: {error}")
             return {}
 
-    def get_embedding_file(self, query_prompt): # 查找embedding文件
+    def get_embedding_file(self, query_prompt): # 查找embedding文件 
         with open(self.index_file, 'r') as f:
             index = json.load(f)
             for entry in index:
