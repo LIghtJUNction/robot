@@ -42,6 +42,8 @@ def callback():
     print("Sender:", user)
     print("Content:", xinxi)
 
+
+
     # 发送生成回复请求
     url_generate = "http://localhost:11434/api/generate"
     data_generate = {
