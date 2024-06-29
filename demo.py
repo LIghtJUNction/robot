@@ -1,13 +1,21 @@
-from flask import Flask, request
-import requests # type: ignore
-import json
+from flask import Flask, request  # 从 Flask 模块导入 Flask 和 request，用于创建 Web 应用和处理请求
+import requests # 导入 requests 模块，用于发送 HTTP 请求。使用 type: ignore 忽略潜在的类型检查警告。
+import json  # 导入 json 模块，用于处理 JSON 数据
 
 app = Flask(__name__)
+def send_message_to_api(url, prompt):
+    """向API端点发送消息。
 
+    Args:
+        url (str): API端点的URL。
+        payload (dict): 将作为JSON对象发送到API的数据。
 
-def send_message_to_api(url, data):
+    根据API响应状态码打印成功消息或错误消息。
+    """
+    
+
     headers = {"Content-Type": "application/json"}
-    response = requests.post(url, json=data, headers=headers)
+    response = requests.post(url, json=payload, headers=headers)
 
     if response.status_code == 200:
         print("Message sent successfully.")
